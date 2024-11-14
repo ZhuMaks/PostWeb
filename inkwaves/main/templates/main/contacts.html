@@ -1,0 +1,50 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+        <div class="features">
+               <div class="title">
+                       <h1>Get in touch</h1>
+               </div>
+                <div class="contact form">
+                        <form method="post" action="mailto:maksyz15@gmail.com" enctype="text/plain">
+                                {% csrf_token %}
+                                <div class="formBox">
+                                        <div class="row50">
+                                                <div class="inputBox">
+                                                        <span>First Name</span>
+                                                        <input name="firstname" type="text" placeholder="John">
+                                                </div>
+                                                <div class="inputBox">
+                                                        <span>Last Name</span>
+                                                        <input name="lastname" type="text" placeholder="Doe">
+                                                </div>
+                                        </div>
+
+                                        <div class="row50">
+                                                <div class="inputBox">
+                                                        <span>Email</span>
+                                                        <input name="email" type="text" placeholder="johndoe@gmail.com">
+                                                </div>
+                                                <div class="inputBox">
+                                                        <span>Phone number</span>
+                                                        <input name="number" type="text" placeholder="+380 50 123 45 67">
+                                                </div>
+                                        </div>
+                                        <div class="row100">
+                                                <div class="inputBox">
+                                                        <span>Message</span>
+                                                        <textarea name="message" placeholder="Write you message here..."></textarea>
+                                                </div>
+                                        </div>
+                                        <div class="row100">
+                                                <div class="inputBox">
+                                                        <input type="submit" value="Send">
+                                                </div>
+                                        </div>
+                                </div>
+                        </form>
+                </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Posts on websites{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Posts on websites</h1>
+        {% if posts %}
+            {% for el in posts %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.announcement }}</p>
+                    <a href="{% url 'post-detail' el.id %}" class="btn btn-warning">View Detailed</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have no posts!</p>
+        {% endif %}
+    </div>
+{% endblock %}
